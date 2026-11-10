@@ -1,27 +1,29 @@
-# Simulador Alpamayo 2 Edge (demo educacional)
+# Alpamayo 2 Edge Simulator (educational demo)
 
-Demo web interativa inspirada no [NVIDIA Alpamayo 2 Edge](https://huggingface.co/nvidia/Alpamayo2-Edge), um modelo VLA (Vision-Language-Action) para direção autônoma.
+Interactive web demo inspired by the [NVIDIA Alpamayo 2 Edge](https://huggingface.co/nvidia/Alpamayo2-Edge), a VLA (Vision-Language-Action) model for autonomous driving.
 
-**Não executa o modelo real.** O carro é guiado por um planejador simples baseado em regras; a demo reproduz o *formato* de entrada e saída do modelo:
+![Simulator screenshot](screenshot.png)
 
-- Entrada: 6 câmeras (22 quadros por inferência), 20 poses de histórico e instrução de navegação em texto.
-- Saída: trajetória de 64 waypoints (6,4 s) e, quando necessário, raciocínio Chain-of-Causation com nota do AlpaJudge (simulado).
+**It does not run the real model.** The car is driven by a simple rule-based planner; the demo reproduces the model's *input/output format*:
 
-Recursos: eventos provocados (pedestre, corte de faixa, freada brusca, obra), clima, perfis de frota, modo de raciocínio adaptativo e perguntas livres.
+- Input: 6 cameras (22 frames per inference), 20 history poses and a text navigation instruction.
+- Output: a 64-waypoint trajectory (6.4 s) and, when needed, Chain-of-Causation reasoning with a (simulated) AlpaJudge score.
 
-## Modo "Você pilota"
+Features: triggered events (jaywalking pedestrian, cut-in, sudden braking, road work), weather, fleet profiles, adaptive reasoning mode and free-form questions.
 
-Em **Modo de condução**, escolha **Você pilota**:
+## "You drive" mode
 
-- ↑/W acelera, ↓/S freia, ←/A e →/D trocam de faixa, Espaço é o freio forte (ou segure os botões na tela).
-- Na visão de cima, a linha branca pontilhada é o seu caminho e a linha verde/amarela é o que o modelo faria.
-- O painel mostra a sugestão do modelo, a % de concordância, as intervenções do assistente e os sinais vermelhos avançados.
-- Com o **assistente de segurança** ligado, o modelo freia por você e bloqueia trocas de faixa perigosas; desligue para dirigir sem rede de proteção.
+Under **Driving mode**, choose **You drive**:
 
-## Som
+- Up/W accelerates, Down/S brakes, Left/A and Right/D change lanes, Space is the hard brake (or hold the on-screen buttons).
+- In the top-down view, the white dotted line is your path and the green/yellow line is what the model would do.
+- The panel shows the model's suggestion, your % of agreement, assistant interventions and red lights run.
+- With the **safety assistant** on, the model brakes for you and blocks dangerous lane changes; turn it off to drive without a safety net.
 
-Som gerado no próprio navegador (Web Audio, sem arquivos): motor e vento acompanham a velocidade, chuva, seta na troca de faixa, bip quando o modelo raciocina, alarme quando o assistente intervém e som de batida. Tecla **H** buzina. Botão **Som ligado/desligado** e volume no painel Simulação. O áudio começa no primeiro clique na página (regra dos navegadores).
+## Sound
 
-## Como abrir
+Sound is generated in the browser itself (Web Audio, no files): engine and wind follow the speed, rain, turn-signal click on lane change, beep when the model reasons, alarm when the assistant intervenes and crash sound. Press **H** to honk. **Sound on/off** button and volume in the Simulation panel. Audio starts on the first page click (browser requirement).
 
-Arquivo único, sem dependências: abra `index.html` direto no navegador (duplo clique).
+## How to open
+
+Single file, no dependencies: open `index.html` directly in your browser (double-click).
